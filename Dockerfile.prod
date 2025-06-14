@@ -30,4 +30,4 @@ RUN python manage.py collectstatic --noinput
 
 # Exponer puerto y arrancar Gunicorn
 EXPOSE 8000
-CMD ["gunicorn", "--bind", "0.0.0.0:8000", "echonet_backend.wsgi"]
+CMD ["gunicorn", "--bind", "0.0.0.0:$PORT", "echonet_backend.wsgi"]
