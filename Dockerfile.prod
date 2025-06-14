@@ -1,0 +1,33 @@
+# Fase 1: Construir el frontend Vue
+FROM node:20-buster as vue-builder
+
+WORKDIR /app
+COPY echonet-frontend/ /app/
+
+# Instalar dependencias y construir
+RUN npm config set script-shell bash && \
+    npm cache clean --force && \
+    npm install && \
+    npm run build
+
+# Fase 2: Construir el backend Django
+FROM python:3.11-slim
+
+WORKDIR /app
+
+# Copiar requirements y dependencias del backend
+COPY echonet_backend/requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copiar código del backend
+COPY echonet_backend/ /app/
+
+# Copiar archivos estáticos del frontend
+COPY --from=vue-builder /app/dist /app/staticfiles
+
+# Preparar staticfiles para Django
+RUN python manage.py collectstatic --noinput
+
+# Exponer puerto y arrancar Gunicorn
+EXPOSE 8000
+CMD ["gunicorn", "--bind", "0.0.0.0:8000", "echonet_backend.wsgi"]
