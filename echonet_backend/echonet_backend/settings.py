@@ -1,16 +1,17 @@
 from datetime import timedelta
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-v*=4ctfyl&pe37%c8rs7oa4hoj3h_4w--q9nxw1j=ebd%91865'
+SECRET_KEY = os.getenv("SECRET_KEY", "django-insecure-v*=4ctfyl&pe37%c8rs7oa4hoj3h_4w--q9nxw1j=ebd%91865")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv("DEBUG", "False") == "True"
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "").split(",")   
 
 WEBSITE_URL = 'http://127.0.0.1:8000'
 
@@ -30,8 +31,8 @@ CSRF_COOKIE_SAMESITE = 'Lax'
 CSRF_COOKIE_SECURE = False
 
 # VALORES DE SPOTIFY
-SPOTIFY_CLIENT_ID = '78cc48f673894cf1b8a45ecc5ff98c16'
-SPOTIFY_CLIENT_SECRET = '45acdd37e4bd4ae7809dd821717df2df'
+SPOTIFY_CLIENT_ID = os.getenv("SPOTIFY_CLIENT_ID")
+SPOTIFY_CLIENT_SECRET = os.getenv("SPOTIFY_CLIENT_SECRET")
 REDIRECT_URI = 'http://127.0.0.1:8000/api/spotify/callback'
 FRONTEND_URL = 'http://localhost:5173/signup'
 
