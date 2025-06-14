@@ -9,4 +9,8 @@ pytz==2023.3
 sqlparse==0.4.3
 requests>=2.32.0
 gunicorn==21.2.0
+<<<<<<< HEAD
 setuptools>=65.0.0
+=======
+setuptools>=65.0.0
+>>>>>>> 6f05fe19ffca529385df3e5c9dd40e4f5d07f619
