@@ -11,7 +11,8 @@ SECRET_KEY = os.getenv("SECRET_KEY", "django-insecure-v*=4ctfyl&pe37%c8rs7oa4hoj
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv("DEBUG", "False") == "True"
 
-ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "").split(",")   
+ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "echonet-docker.onrender.com,localhost,127.0.0.1").split(",")
+
 
 WEBSITE_URL = 'http://127.0.0.1:8000'
 
