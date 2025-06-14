@@ -1,0 +1,133 @@
+/* main.css */
+
+/* Reset some default browser styles */
+body, h1, h2, h3, p, ul, ol, li, figure, blockquote {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Set global font and background */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Utility classes */
+.container {
+    /* max-width: 1200px; */
+    /* margin: 0 auto; */
+    padding: 0 0rem;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.mt-1 {
+    margin-top: 1rem;
+}
+
+.mb-1 {
+    margin-bottom: 1rem;
+}
+
+/* Header styles */
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 1rem 0;
+}
+
+header h1 {
+    text-align: center;
+}
+
+/* Navigation styles */
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: #333;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+}
+
+nav a:hover{
+    .logo{
+        filter: brightness(0) saturate(100%) invert(70%) sepia(80%) saturate(500%) hue-rotate(60deg) brightness(1.2);
+    }
+    
+} 
+
+.nav-link{
+    color: #00be29;
+}
+
+.nav-link:hover {
+    color: #00a11f;
+}
+
+a {
+    color: #00be29;
+}
+
+/* cambiar estilo de btn primary bootstrap para uqe sea color verde */
+.btn-primary {
+    background-color: #4CAF50;
+    border-color: #4CAF50;
+}
+.btn-primary:hover {
+    background-color: #45a049;
+    border-color: #45a049;
+}
+
+.bg-primary {
+    background-color: #4CAF50 !important;
+}
+
+.btn-outline-primary {
+    color: #4CAF50;
+    border-color: #4CAF50;
+}
+.btn-outline-primary:hover {
+    svg{
+        stroke: white;
+    }
+    color: white;
+    background-color: #4CAF50;
+    border-color: #4CAF50;
+}
+
+
+
+
+
+
+/* Footer styles */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+}
+
+/* Button styles */
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
